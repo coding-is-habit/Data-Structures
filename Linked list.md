@@ -158,11 +158,6 @@ struct ListNode * insertAtEnd(struct ListNode * head, int data) {
 Practice this problem [Insert Node at the end of the list](https://www.hackerrank.com/challenges/insert-a-node-at-the-tail-of-a-linked-list)
 ### Inserting a Node in Singly Linked List at the Given Position
 Let us assume that we are given a position where we want to insert the new node. In this case also, we need to modify two next pointers.
-### Approach:
-* If Head is null and position is not 0. Then exit it.
-* If Head is null and position is 0. Then insert new Node to the Head and exit it.
-* If Head is not null and position is 0. Then the Head reference set to the new Node. Finally, new Node set to the Head and exit it.
-* If not, iterate until finding the Nth position or end.
 
 **Below is the implementation of the above algorithm.**
 ```c++
