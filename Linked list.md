@@ -33,3 +33,26 @@ Can be **expanded in constant time**. To create an array, we must allocate memor
 ### Disadvantages of Linked List ( Why Arrays over Linked list ) :
 * Arrays take O(1) time to access the any element in the array, whereas linked list take O(n) for access to an element in the list in the worst case.
 * Linked list waste memory in terms of extra reference points.
+
+### Comparison of Linked list with Arrays and Dynamic Arrays
+|            parameter            |         Linked List        |                Array               |                  Dynamic array                  |
+|:-------------------------------:|:--------------------------:|:----------------------------------:|:-----------------------------------------------:|
+|             Indexing            |            O(n)            |                O(1)                |                       O(1)                      |
+| Insertion/Deletion at beginning |            O(1)            |                O(n)                |                       O(n)                      |
+|       Insertion at ending       | O(1), if array is not full |                O(1)                | O(1) if array is not full O(n) if array is full |
+|        Deletion at ending       |            O(n)            |                O(1)                |                       O(n)                      |
+|       Insertion in middle       |            O(n)            | O(n), because of shifting elements |                       O(n)                      |
+|        Deletion in middle       |            O(n)            | O(n), because of shifting elements |                       O(n)                      |
+|           Wasted space          |     O(n), for pointers     |                  0                 |                       O(n)                      |
+
+### Singly Linked List
+* The linked list consist series of structures called **nodes** .
+* The first part of node is field that stores data and second part is field that store pointer to node.
+* Each node contains two fields: a data field and next field which is pointer used to link one node to the next node.
+
+```c++
+struct ListNode {            // defines a ListNode in a Linked List
+    int data;                // the data
+    struct ListNode* next;   // pointer to next ListNode
+};
+```
