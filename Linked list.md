@@ -77,8 +77,8 @@ void print(struct ListNode* head) {
     return;
 }
 ```
-**Time Complexity: O(n), for scanning the list of size n**
-**Space Complexity: O(1), for creating a temporary variable**
+* **Time Complexity: O(n), for scanning the list of size n**
+* **Space Complexity: O(1), for creating a temporary variable**
 
 ### Singly Linked List Insertion
 Insertion into a single linked list has three cases:
@@ -107,8 +107,8 @@ struct ListNode * insertAtBeginning(struct ListNode * head, int data) { // inser
   return head;
 }
 ```
-**Time Complexity: O(1)**
-**Space Complexity: O(1)**
+* **Time Complexity: O(1)**
+* **Space Complexity: O(1)**
 ### Inserting a Node in sigle Linked List at the ending
 In this case, we need to modify **two next pointers** (last nodes next pointer and new nodes next pointer).
 * New node next points to NULL.
@@ -135,8 +135,8 @@ struct ListNode * insertAtEnd(struct ListNode * head, int data) { // insert at e
   return head;
 }
 ```
-**Time Complexity: O(n), for scanning the list of size n**
-**Space Complexity: O(1)**
+* **Time Complexity: O(n), for scanning the list of size n**
+* **Space Complexity: O(1)**
 
 ### Inserting a Node in Singly Linked List at the Given Position
 Let us assume that we are given a position where we want to insert the new node. In this case also, we need to modify two next pointers.
@@ -165,21 +165,7 @@ struct ListNode * insertAtEnd(struct ListNode * head, struct ListNode * newNode,
   newNode -> next = pred -> next;
   pred -> next = newNode;
   return head;
-}```
-**Time Complexity: O(n)**
-**Space Complexity: O(1)**
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
+```
+* **Time Complexity: O(n)**
+* **Space Complexity: O(1)**
