@@ -166,7 +166,7 @@ Let us assume that we are given a position where we want to insert the new node.
 // head - reference of list
 // data - data value of newNode
 // n - position for insertion n>=1
-struct ListNode * insertAtEnd(struct ListNode * head, int data , int n) {
+struct ListNode * insertAtPosition(struct ListNode * head, int data , int n) {
   ListNode * newNode = new ListNode(); // create a node
   temp -> data = data; // set temp data value
   temp -> next = NULL; // set as end of list
@@ -174,7 +174,7 @@ struct ListNode * insertAtEnd(struct ListNode * head, int data , int n) {
   // pred will point to predecessor of newNode
   ListNode * pred = head;
   
-  //Special case: adding at head OR Linked List is empty
+  //Special case: adding at head
   if (n <= 1) {
     newNode -> next = head;
     return newNode;
