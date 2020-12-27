@@ -56,3 +56,76 @@ struct ListNode {            // defines a ListNode in a Linked List
     struct ListNode* next;   // pointer to next ListNode
 };
 ```
+### Basic Operations on Linked list:
+* Traversing the list
+* Inserting an item in the list
+* Deleting an item from the list
+
+### Traversing the linked list:
+Let us assume that the head points to the first node of the list. To traverse the list we do the following:
+* Follow the pointers.
+* Display the content of the nodes (or count) as they traversed.
+* Stop when the next pointer points to NULL.
+
+```c++
+void print(struct ListNode* head) {
+    struct ListNode *curr = head;
+    while(curr != NULL) {
+        cout<<curr->data<<" ";    // print the node's data
+        curr = curr -> next;     // advancing the pointers
+    }
+    return;
+}
+```
+**Time Complexity: O(n), for scanning the list of size n**
+**Space Complexity: O(1), for creating a temporary variable**
+
+### Singly Linked List Insertion
+Insertion into a single linked list has three cases:
+* Inserting a new node before the head (at the beginning).
+* Inserting a new node after the tail (at the end of the list).
+* Inserting a new node at the middle of the list (ranodom location).
+
+### Inserting a Node in Singly Linked List at the Beginning
+In this case, a new node is inserted before the current head node. Only one **next pointer** need to be modified and it can be done in two steps:
+* Update the next pointer of new node, to point to the current head.
+* Update head pointer to point to new node.
+```c++
+struct ListNode* insertAtBeginning(struct ListNode* head, int data) { // insert at beginnning of list
+    ListNode* temp = new ListNode(); // create a node
+    // create a new temp node
+    temp->data =  data; // set temp data value
+    temp->next = NULL;  // set as end of list
+    
+    if(head == NULL) {  // then list empty, so set as head node
+        head = temp;
+        head->next = NULL;
+    }
+    else{ // else add tp left of list
+        temp->next = head;
+        head = temp;
+    }
+    return head;
+}
+```
+**Time Complexity: O(1)**
+**Space Complexity: O(1)**
+### Inserting a Node in sigle Linked List at the ending
+In this case, we need to modify **two next pointers** (last nodes next pointer and new nodes next pointer).
+* New node next points to NULL.
+* Last nodes next pointer points to the new node.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
