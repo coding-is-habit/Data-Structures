@@ -80,6 +80,7 @@ void print(struct ListNode* head) {
 * **Time Complexity: O(n), for scanning the list of size n**
 * **Space Complexity: O(1), for creating a temporary variable**
 
+Practice this problem [Print the element of Linked List](https://www.hackerrank.com/challenges/print-the-elements-of-a-linked-list)
 ### Singly Linked List Insertion
 Insertion into a single linked list has three cases:
 * Inserting a new node before the head (at the beginning).
@@ -109,6 +110,8 @@ struct ListNode * insertAtBeginning(struct ListNode * head, int data) { // inser
 ```
 * **Time Complexity: O(1)**
 * **Space Complexity: O(1)**
+
+Practice this problem [Insert Node at the head of the list](https://www.hackerrank.com/challenges/insert-a-node-at-the-head-of-a-linked-list)
 ### Inserting a Node in sigle Linked List at the ending
 In this case, we need to modify **two next pointers** (last nodes next pointer and new nodes next pointer).
 * New node next points to NULL.
@@ -138,6 +141,7 @@ struct ListNode * insertAtEnd(struct ListNode * head, int data) { // insert at e
 * **Time Complexity: O(n), for scanning the list of size n**
 * **Space Complexity: O(1)**
 
+Practice this problem [Insert Node at the end of the list](https://www.hackerrank.com/challenges/insert-a-node-at-the-tail-of-a-linked-list)
 ### Inserting a Node in Singly Linked List at the Given Position
 Let us assume that we are given a position where we want to insert the new node. In this case also, we need to modify two next pointers.
 
@@ -169,3 +173,5 @@ struct ListNode * insertAtEnd(struct ListNode * head, struct ListNode * newNode,
 ```
 * **Time Complexity: O(n)**
 * **Space Complexity: O(1)**
+
+Practice this problem [Insert Node at the specific position of the list](https://www.hackerrank.com/challenges/insert-a-node-at-a-specific-position-in-a-linked-list)
