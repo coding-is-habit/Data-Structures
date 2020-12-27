@@ -91,21 +91,20 @@ In this case, a new node is inserted before the current head node. Only one **ne
 * Update the next pointer of new node, to point to the current head.
 * Update head pointer to point to new node.
 ```c++
-struct ListNode* insertAtBeginning(struct ListNode* head, int data) { // insert at beginnning of list
-    ListNode* temp = new ListNode(); // create a node
-    // create a new temp node
-    temp->data =  data; // set temp data value
-    temp->next = NULL;  // set as end of list
-    
-    if(head == NULL) {  // then list empty, so set as head node
-        head = temp;
-        head->next = NULL;
-    }
-    else{ // else add tp left of list
-        temp->next = head;
-        head = temp;
-    }
-    return head;
+struct ListNode * insertAtBeginning(struct ListNode * head, int data) { // insert at beginnning of list
+  ListNode * temp = new ListNode(); // create a node
+  // create a new temp node
+  temp -> data = data; // set temp data value
+  temp -> next = NULL; // set as end of list
+
+  if (head == NULL) { // then list empty, so set as head node
+    head = temp;
+    head -> next = NULL;
+  } else { // else add tp left of list
+    temp -> next = head;
+    head = temp;
+  }
+  return head;
 }
 ```
 **Time Complexity: O(1)**
@@ -114,6 +113,63 @@ struct ListNode* insertAtBeginning(struct ListNode* head, int data) { // insert 
 In this case, we need to modify **two next pointers** (last nodes next pointer and new nodes next pointer).
 * New node next points to NULL.
 * Last nodes next pointer points to the new node.
+```c++
+struct ListNode * insertAtEnd(struct ListNode * head, int data) { // insert at end of list
+  ListNode * temp = new ListNode(); // create a node
+  ListNode * curr = head; // iterator for list
+  // create a new temp node
+  temp -> data = data; // set temp data value
+  temp -> next = NULL; // set as end of list
+
+  if (curr == NULL) { // then list empty, so set temp as head
+    head = temp;
+  } else {
+    // find end of current list
+    while (curr != NULL) {
+      curr = curr -> next;
+    }
+    // curr is now the last node in list (next==NULL)
+    // set temp as new next node
+    curr -> next = temp;
+  }
+  return head;
+}
+```
+**Time Complexity: O(n), for scanning the list of size n**
+**Space Complexity: O(1)**
+
+### Inserting a Node in Singly Linked List at the Given Position
+Let us assume that we are given a position where we want to insert the new node. In this case also, we need to modify two next pointers.
+
+```c++
+// Insert a new node (new) at positon n and returns head.
+// head - reference of list
+// newNode - node to be inserted
+// n - position for insertion
+struct ListNode* insertAtEnd(struct ListNode* head, struct ListNode* newNode,int n) {
+    // pred will point to predecessor of new
+    ListNode* pred= head;
+    //Special case: adding at head
+    if(n<=1)
+    {
+        newNode->next=head;
+        return newNode;
+    }
+    // find the n-1 node (predecessor): decrement and move down the list
+    // until either the list has ended or n becomes 0
+    while(--n && pred!=NULL) {
+        pred=pred->next; // repoint pred to next element
+    }
+    if(pred==NULL)
+        return NULL;
+    // if it is not NULL, insert new after its predecessor
+    newNode->next=pred->next;
+    pred->next=newNode;
+    return head;
+}
+```
+**Time Complexity: O(n)**
+**Space Complexity: O(1)**
 
 
 
