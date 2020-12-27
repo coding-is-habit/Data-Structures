@@ -13,7 +13,7 @@ In this case, a new node is inserted before the current head node. Only one **ne
 **Below is the implementation of the above algorithm.**
 ```c++
 // inserts at beginnning of list
-// head- refrence to Linked List
+// head- pointer to head of Linked List
 // data - newNode's data value 
 struct ListNode * insertAtBeginning(struct ListNode * head, int data) { 
   ListNode * newNode = new ListNode(); // create a node
@@ -43,7 +43,7 @@ In this case, we need to modify **two next pointers** (last nodes next pointer a
 **Below is the implementation of the above algorithm.**
 ```c++
 // inserts at the end of Linked List
-// head- refrence to Linked List
+// head- pointer to head of Linked List
 // data - newNode's data value 
 struct ListNode * insertAtEnd(struct ListNode * head, int data) { 
   ListNode * newNode = new ListNode(); // create a node
@@ -76,7 +76,7 @@ Let us assume that we are given a position where we want to insert the new node.
 ```c++
 // 1 base indexing
 // Insert a new node (new) at positon n and returns head.
-// head - reference of list
+// head- pointer to head of Linked List
 // data - data value of newNode
 // n - position for insertion n>=1
 struct ListNode * insertAtPosition(struct ListNode * head, int data , int n) {
