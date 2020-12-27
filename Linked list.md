@@ -146,28 +146,26 @@ Let us assume that we are given a position where we want to insert the new node.
 // head - reference of list
 // newNode - node to be inserted
 // n - position for insertion
-struct ListNode* insertAtEnd(struct ListNode* head, struct ListNode* newNode,int n) {
-    // pred will point to predecessor of new
-    ListNode* pred= head;
-    //Special case: adding at head
-    if(n<=1)
-    {
-        newNode->next=head;
-        return newNode;
-    }
-    // find the n-1 node (predecessor): decrement and move down the list
-    // until either the list has ended or n becomes 0
-    while(--n && pred!=NULL) {
-        pred=pred->next; // repoint pred to next element
-    }
-    if(pred==NULL)
-        return NULL;
-    // if it is not NULL, insert new after its predecessor
-    newNode->next=pred->next;
-    pred->next=newNode;
-    return head;
-}
-```
+struct ListNode * insertAtEnd(struct ListNode * head, struct ListNode * newNode, int n) {
+  // pred will point to predecessor of new
+  ListNode * pred = head;
+  //Special case: adding at head
+  if (n <= 1) {
+    newNode -> next = head;
+    return newNode;
+  }
+  // find the n-1 node (predecessor): decrement and move down the list
+  // until either the list has ended or n becomes 0
+  while (--n && pred != NULL) {
+    pred = pred -> next; // repoint pred to next element
+  }
+  if (pred == NULL)
+    return NULL;
+  // if it is not NULL, insert new after its predecessor
+  newNode -> next = pred -> next;
+  pred -> next = newNode;
+  return head;
+}```
 **Time Complexity: O(n)**
 **Space Complexity: O(1)**
 
