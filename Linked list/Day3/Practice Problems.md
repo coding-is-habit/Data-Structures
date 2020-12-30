@@ -14,4 +14,4 @@
     
 ### 🎯  [Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/)  Facebook
 
-##### That's it! You have completed the Day 2 for Linked Lists.
+##### That's it! You have completed the Day 3 for Linked Lists.
