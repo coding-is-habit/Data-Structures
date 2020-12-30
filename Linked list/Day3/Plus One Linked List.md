@@ -1,0 +1,57 @@
+## Plus One Linked List
+Given a non-negative integer represented as a linked list of digits,  _plus one to the integer_.
+
+The digits are stored such that the most significant digit is at the  `head`  of the list.
+
+**Example 1:**
+
+**Input:** head = [1,2,3]
+
+**Output:** [1,2,4]
+
+
+**Example 2:** 
+
+**Input:** head = [0]
+
+**Output:** [1]
+### Intuition:
+
+* Idea is to just reverse the linked list so we can access the nodes we need to increase sequentially.  
+E.g. [1,2,3] --> [3,2,1]  
+* Then just iteratively add a value and deal with carries if they arise by tracking with a variable.  
+* If we reach the end of our list and still have a carry (like in the case of [9, 9, 9]), then we just add a new node at the end.  
+* We have to reverse everything back at the end so it's back in proper left to right order.
+
+```c++
+ListNode * removeElements(ListNode * head, int val) {
+
+  ListNode * curr = head;
+  if (head == NULL) {
+    return NULL;
+  }
+  while (curr -> next != NULL) //Iterate until linked list is not null
+  {
+    // If the next element's value equals 'val'. Then Shift currents next to the next of current's next node. And repeat same, checking current with currents next.
+    if (curr -> next -> val == val) {
+      curr -> next = curr -> next -> next;
+    } else // otherwise shift current to currents next.
+    {
+      curr = curr -> next;
+    }
+  }
+  if (head -> val == val) // Check if the initial Head ( beginning current) was equal to Val. If so, shift it to next.
+  {
+    head = head -> next;
+  }
+  return head;
+}
+```
+
+**Time Complexity:** O(n), though we do have to make several passes of the list due to the reverses. 
+
+**Space Complexity:** O(1) space though so in theory could be better than a recursive solution, which would require O(n) space for the callstack.
+
+**[Video Tutorial](https://www.youtube.com/watch?v=utc8bwTDjLk)** 
+
+**Practice this Problem:** [**Plus One**](https://leetcode.com/problems/plus-one-linked-list/)
