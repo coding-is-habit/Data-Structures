@@ -1,0 +1,104 @@
+### Rotate the sub-list of a linked list from position M to N to the right by K places
+
+Given a linked list and two positions ‘m’ and ‘n’. The task is to rotate the sublist from position m to n, to the right by k places.
+
+**Examples:**
+
+> **Input:**  list = 1->2->3->4->5->6, m = 2, n = 5, k = 2  
+> **Output:**  1->4->5->2->3->6  
+> Rotate the sublist 2 3 4 5 towards right 2 times  
+> then the modified list are: 1 4 5 2 3 6
+> 
+> **Input:**  list = 20->45->32->34->22->28, m = 3, n = 6, k = 3  
+> **Output:**  20->45->34->22->28->32  
+> Rotate the sublist 32 34 22 28 towards right 3 times  
+> then the modified list are: 20 45 34 22 28 32
+
+**Approach:**  For rotating the given sublist that extends from m to n element,
+*  move the list from (n-k+1)th  to nth  node to starting of sub-list to finish the rotation.
+* If k is greater than size of sublist then we will take its modulo with size of sublist. So traverse through list using a pointer and a counter and we will save (m-1)th  node and later make it point to (n-k+1)th  node and hence bring (n-k+1)th  node to the start(front) of sublist.  
+* Similarly we will save mth  node and later make nth  node point to it. And for keeping rest of list intact we will make (n-k)th  node point to next node of n (maybe NULL). And finally we will get the k times right rotated sublist.
+```c++
+// This function take head pointer of list, start and 
+// end points of sublist that is to be rotated and the 
+// number k and rotate the sublist to right by k places. 
+void rotateSubList(ListNode * head_ref, int m, int n, int k) {
+  int size = n - m + 1;
+
+  // If k is greater than size of sublist then  
+  // we will take its modulo with size of sublist 
+  if (k > size) {
+    k = k % size;
+  }
+
+  // If k is zero or k is equal to size or k is 
+  // a multiple of size of sublist then list  
+  // remains intact 
+  if (k == 0 || k == size) {
+    ListNode * head = head_ref;
+    while (head != NULL) {
+      cout << head -> data;
+      head = head -> next;
+    }
+    return;
+  }
+
+  ListNode * link = NULL; // m-th node 
+  if (m == 1) {
+    link = head_ref;
+  }
+
+  // This loop will traverse all node till 
+  // end node of sublist.     
+  ListNode * current = A; // Current traversed node 
+  int count = 0; // Count of traversed nodes 
+  ListNode * end = NULL;
+  ListNode * previous = NULL; // Previous of m-th node 
+  while (c != NULL) {
+    count++;
+
+    // We will save (m-1)th node and later 
+    // make it point to (n-k+1)th node 
+    if (count == m - 1) {
+      pre = current;
+      link = current -> next;
+    }
+    if (count == n - k) {
+      if (m == 1) {
+        end = current;
+        head_ref = current -> next;
+      } else {
+        end = current;
+
+        // That is how we bring (n-k+1)th 
+        // node to front of sublist. 
+        previous -> next = current -> next;
+      }
+    }
+
+    // This keeps rest part of list intact. 
+    if (count == n) {
+      ListNode * link2 = c -> next;
+      current -> next = link;
+      end -> next = link2;
+      ListNode * head = head_ref;
+      while (head != NULL) {
+        cout << head -> data << " ";
+        head = head -> next;
+      }
+      return;
+    }
+    current = current -> next;
+  }
+}
+```
+
+**Output:**
+```
+Given List: 10 20 30 40 50 60 70 
+After rotation of sublist: 10 20 50 60 30 40 70
+```
+
+**Time Complexity:** O(n)
+
+**Space Complexity:**  O(1)
