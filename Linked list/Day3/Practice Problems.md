@@ -1,6 +1,6 @@
 ### Try to solve the problem below using the knowledge you gained from today's practice.
-#### For the leetcode problems, do think about implementing the follow up questions as well if they are present, these are often asked in the interviews.
-#### Do raise a help request if you're stuck anywhere!
+For the leetcode problems, do think about implementing the follow up questions as well if they are present, these are often asked in the interviews.
+Do raise a help request if you're stuck anywhere!
 
 ### 🎯  [Reorder List](https://leetcode.com/problems/reorder-list/) - Amazon, Microsoft
     
